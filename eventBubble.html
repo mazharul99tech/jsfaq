@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble Delegates</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Event Bubble Elements</h1>
+        <ul id="my-first">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Suscipit, nam cupiditate.</li>
+            <li class="item">Laborum, doloribus consequatur!</li>
+            <li class="item">Quod, iure? Reprehenderit.</li>
+            <li class="item">Eveniet, natus quos.</li>
+            <li class="item">Rerum, ipsam reiciendis!</li>
+        </ul>
+        <button id="addNew">Add New Item</button>
+    </div>
+
+    <script>
+        // var items = document.getElementsByTagName('li');
+        // for (let i = 0; i < items.length; i++) {
+        //     const item = items[i];
+        //     item.addEventListener('click', function(event){
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        document.getElementById('addNew').addEventListener('click', function(event){
+            var itemParent = document.getElementById('my-first');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'Brand New Button';
+            itemParent.appendChild(newItem);
+        })
+
+        document.getElementById('my-first').addEventListener('click', function(event){
+            // console.log(this, event.target);
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+</body>
+</html>
