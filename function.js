@@ -32,3 +32,6 @@ console.log(numsEven);
 var friendAge = [10, 13, 15, 23, 45, 24, 20];
 var result = evenifyAll(friendAge);
 console.log(result);
+
+var date = new Date(1999-05-18);
+console.log(date);
